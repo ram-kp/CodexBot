@@ -4,7 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start": "nodemon server"
+    "start": "nodemon server",
+    "build": "webpack --mode production"
   },
   "author": "",
   "license": "ISC",
