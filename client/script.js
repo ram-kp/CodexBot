@@ -56,7 +56,7 @@
 
  const handleSubmit = async (e) =>{
   e.preventDefault();
-
+  // console.log("here")
   const data = new FormData(form);
 
   // user's charstripe
@@ -70,7 +70,7 @@
   chatContainer.scrollTop = chatContainer.scrollHeight;
   const messageDiv = document.getElementById(uniqueId)
   loader(messageDiv)
-
+  console.log("data ", data.get('prompt'));
   const response = await fetch("http://localhost:5000/", {
     method: 'POST',
     headers: {
@@ -82,9 +82,9 @@
   })
   clearInterval(loadInterval)
   messageDiv.innerHTML = '';
-  console.log(response)
   if(response.ok){
     const data = await response.json()
+    console.log("data", data.bot)
     const parsedData = data.bot.trim()
     typeText(messageDiv, parsedData)
   }else{
