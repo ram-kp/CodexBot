@@ -71,7 +71,7 @@
   const messageDiv = document.getElementById(uniqueId)
   loader(messageDiv)
   console.log("data ", data.get('prompt'));
-  const response = await fetch("http://localhost:5000/", {
+  const response = await fetch("https://codex-bot-server-le73wrc5e-ram-kp.vercel.app/", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
